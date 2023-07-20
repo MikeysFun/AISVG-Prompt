@@ -33,17 +33,18 @@ with open(scriptfile, 'r') as script:
 
 char2 = []
 
-# SpongeBob = spongebob
+# SpongeBob, DoodleBob, Giant SpongeBob = spongebob
 # Mr. Krabs = mr-krabs
 # Plankton = plankton
 # Patrick = patrick
 # Sandy = sandy-cheeks
-# Squidward = squidward
+# Squidward, Squiddy, Squiddi = squidward
 # Narrator = the-french-narrator
 # Karen = karen-the-computer
+# Larry = larry-the-lobster
 
 for charact in characters:
-    if charact == "SpongeBob":
+    if charact == "SpongeBob" or charact == "DoodleBob" or charact == "Giant SpongeBob":
         char2.append("spongebob")
         
     if charact == "Mr. Krabs":
@@ -58,7 +59,7 @@ for charact in characters:
     if charact == "Sandy":
         char2.append("sandy-cheeks")
         
-    if charact == "Squidward":
+    if charact == "Squidward" or charact == "Squiddy" or charact == "Squiddi":
         char2.append("squidward")
 
     if charact == "Narrator":
@@ -66,6 +67,9 @@ for charact in characters:
 
     if charact == "Karen":
         char2.append("karen-the-computer")
+
+    if charact == "Larry":
+        char2.append("larry-the-lobster")
 
 for i in range(len(lines)):
         audio = requests.post(

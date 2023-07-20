@@ -42,6 +42,7 @@ char2 = []
 # Narrator = the-french-narrator
 # Karen = karen-the-computer
 # Larry = larry-the-lobster
+# Gary = bypass completely
 
 for charact in characters:
     if charact == "SpongeBob" or charact == "DoodleBob" or charact == "Giant SpongeBob":
@@ -70,15 +71,21 @@ for charact in characters:
 
     if charact == "Larry":
         char2.append("larry-the-lobster")
+    
+    if charact == "Gary":
+        char2.append("gary")
 
 for i in range(len(lines)):
-        audio = requests.post(
-            "https://api.uberduck.ai/speak-synchronous",
-            json=dict(speech=lines[i], voice=char2[i]),
-            auth=uberduck_auth,
-        ).content
-        with open(f'{scriptfile.replace(".txt","")}/{i}_audio_{char2[i]}.wav', "wb") as f:
-            f.write(audio)
+        if char2[i] != "gary":
+            audio = requests.post(
+                "https://api.uberduck.ai/speak-synchronous",
+                json=dict(speech=lines[i], voice=char2[i]),
+                auth=uberduck_auth,
+            ).content
+            with open(f'{scriptfile.replace(".txt","")}/{i}_audio_{char2[i]}.wav', "wb") as f:
+                f.write(audio)
+        else:
+            shutil.copy("./gary.wav", f"./{scriptfile.replace('.txt','')}/{i}_audio_{char2[i]}.wav")
 with open(f'concat.txt', "w") as file:
     for i in range(len(lines)):
         file.write(f"file '{scriptfile.replace('.txt','')}/{i}_audio_{char2[i]}.wav'\n")

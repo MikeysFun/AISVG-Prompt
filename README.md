@@ -18,9 +18,9 @@ Once you got those, we can start!
 
 1. Install the only requirement by running `pip3 install -r requirements.txt` in your shell.
 2. Copy `.env.example` to `.env` and replace `KEY_HERE` and `SECRET_HERE` with the API key and API secret you've gotten from Uberduck. If you're still having trouble getting the credentials:
-  1. Go to your Uberduck account after you logged in.
-  2. Down there, you can see your API keys and secrets and, if you don't have them, a "CREATE NEW API KEY" button.
-  3. Click on it and save the credentials to the .env file in order.
+    1. Go to your Uberduck account after you logged in.
+    2. Down there, you can see your API keys and secrets and, if you don't have them, a "CREATE NEW API KEY" button.
+    3. Click on it and save the credentials to the .env file in order.
 3. Done!
 
 # Running the script

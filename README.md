@@ -17,7 +17,10 @@ Once you got those, we can start!
 # Preparing the script
 
 1. Install the only requirement by running `pip3 install -r requirements.txt` in your shell.
-2. Copy `.env.example` to `.env` and replace `KEY_HERE` and `SECRET_HERE` with the API key and API secret you've gotten from Uberduck.
+2. Copy `.env.example` to `.env` and replace `KEY_HERE` and `SECRET_HERE` with the API key and API secret you've gotten from Uberduck. If you're still having trouble getting the credentials:
+  1. Go to your Uberduck account after you logged in.
+  2. Down there, you can see your API keys and secrets and, if you don't have them, a "CREATE NEW API KEY" button.
+  3. Click on it and save the credentials to the .env file in order.
 3. Done!
 
 # Running the script
@@ -48,3 +51,5 @@ and the example you've ran should also sound similar to the one bundled in the `
 Whenever you need to upload a SpongeBob AI-generated episode as a podcast, or just to experiment with SpongeBob's AI-generating functionality, I've got you covered!
 
 You can also edit the characters' voices if you remember the voice names for those (voice model UUIDs are not supported) and if you're an expert programmer that also knows a bit of Python, like me. If you want to revert back in the future to AI Sponge generating, I've also added some handy comments that help you understand the voice names for the voices used.
+
+I also use it for AI Sponge Podcast! Search for "ai sponge podcast" on every podcasting platform you commonly use and you'll find episodes created with that script and some manual editing!

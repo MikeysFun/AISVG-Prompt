@@ -86,9 +86,13 @@ for i in range(len(lines)):
                 f.write(audio)
         else:
             shutil.copy("./gary.wav", f"./{scriptfile.replace('.txt','')}/{i}_audio_{char2[i]}.wav")
-with open(f'concat.txt', "w") as file:
-    for i in range(len(lines)):
-        file.write(f"file '{scriptfile.replace('.txt','')}/{i}_audio_{char2[i]}.wav'\n")
-        file.write("file 'silence.wav'\n")
 
-os.system(f"ffmpeg -f concat -safe 0 -i concat.txt -c:a libmp3lame -b:a 192k -ar 44100 -ac 2 -af aresample=44100 {scriptfile.replace('.txt','')}.mp3")
+newFileSave = input("Do you want to save the segments to a merged audio file? [Y/n] ")
+if newFileSave.lower() == "y" or newFileSave == "":
+    with open(f'concat.txt', "w") as file:
+        for i in range(len(lines)):
+            file.write(f"file '{scriptfile.replace('.txt','')}/{i}_audio_{char2[i]}.wav'\n")
+            file.write("file 'silence.wav'\n")
+    os.system(f"ffmpeg -f concat -safe 0 -i concat.txt -c:a libmp3lame -b:a 192k -ar 44100 -ac 2 -af aresample=44100 {scriptfile.replace('.txt','')}.mp3")
+elif newFileSave.lower() == "n":
+    print("")
